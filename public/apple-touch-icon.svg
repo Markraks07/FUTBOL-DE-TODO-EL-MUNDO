@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Fútbol de todo el mundo icon">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0d1d2a"/>
+      <stop offset="100%" stop-color="#0d5a87"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" rx="34" fill="#070d15"/>
+  <circle cx="90" cy="90" r="62" fill="url(#bg)" stroke="#eff7fd" stroke-width="4"/>
+  <circle cx="90" cy="90" r="45" fill="#f5f7fb" stroke="#0d1a2d" stroke-width="3"/>
+  <path d="M56 72 L77 50 L90 72 L72 93 Z" fill="#0d1a2d"/>
+  <path d="M103 50 L124 72 L99 93 L90 72 Z" fill="#0d1a2d"/>
+  <path d="M48 90 L70 75 L89 92 L71 112 Z" fill="#0d1a2d"/>
+  <path d="M132 90 L110 111 L89 92 L109 75 Z" fill="#0d1a2d"/>
+  <path d="M90 36 L103 50 L90 72 L77 50 Z" fill="#0d1a2d"/>
+  <path d="M90 72 L103 90 L90 110 L77 90 Z" fill="#0d1a2d"/>
+  <path d="M48 110 L70 122 L89 92 L70 75 Z" fill="#0d1a2d" opacity="0.92"/>
+  <path d="M132 110 L110 122 L90 92 L109 75 Z" fill="#0d1a2d" opacity="0.92"/>
+  <path d="M90 0 L90 180 M0 90 L180 90" stroke="#eff7fd" stroke-width="1" opacity="0.45"/>
+</svg>
