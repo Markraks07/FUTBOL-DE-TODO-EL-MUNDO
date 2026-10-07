@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resultados y Partidos | FUTBOL DE TODO EL MUNDO</title>
+    <meta name="description" content="Marcadores, jornadas y resultados en directo del fútbol internacional en FUTBOL DE TODO EL MUNDO." />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="stylesheet" href="/src/index.css" />
+  </head>
+  <body class="bg-[#060911] text-slate-100 flex flex-col min-h-screen">
+    <header></header>
+
+    <main class="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full space-y-8">
+      <!-- Title & Matchday Navigation -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#1e2a45] pb-6">
+        <div>
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-neon/10 border border-neon/30 text-neon text-[11px] font-bold uppercase tracking-wider mb-1">
+            <span>Marcadores en Vivo & Calendario</span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl font-black text-white">Resultados de Partidos</h1>
+        </div>
+
+        <!-- Competition & Matchday Selector -->
+        <div class="flex flex-wrap items-center gap-2">
+          <select id="competition-select" class="fresh-input py-2 px-3 text-xs font-bold w-36 text-center">
+            <option value="all">Todas las Ligas</option>
+            <option value="LaLiga">LaLiga 🇪🇸</option>
+            <option value="Premier League">Premier 🏴󠁧󠁢󠁥󠁮󠁧󠁿</option>
+            <option value="Bundesliga">Bundesliga 🇩🇪</option>
+            <option value="Serie A">Serie A 🇮🇹</option>
+            <option value="Ligue 1">Ligue 1 🇫🇷</option>
+            <option value="Selecciones">Selecciones 🌍</option>
+          </select>
+
+          <div class="flex items-center gap-1">
+            <button id="prev-matchday" class="p-2 bg-[#0c1220] border border-[#1e2a45] rounded-xl text-slate-300 hover:text-white hover:border-neon transition-colors" title="Jornada anterior">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            
+            <select id="matchday-select" class="fresh-input py-2 px-3 text-xs font-bold w-32 text-center">
+              <!-- 1 to 38 -->
+            </select>
+
+            <button id="next-matchday" class="p-2 bg-[#0c1220] border border-[#1e2a45] rounded-xl text-slate-300 hover:text-white hover:border-neon transition-colors" title="Jornada siguiente">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Status Filters -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-1" id="status-filters">
+        <button data-status="all" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-neon text-black shrink-0">Todos los partidos</button>
+        <button data-status="finished" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#0c1220] border border-[#1e2a45] text-slate-300 hover:text-white shrink-0">Finalizados</button>
+        <button data-status="live" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#0c1220] border border-[#1e2a45] text-slate-300 hover:text-white shrink-0">En Vivo</button>
+        <button data-status="scheduled" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#0c1220] border border-[#1e2a45] text-slate-300 hover:text-white shrink-0">Próximos</button>
+      </div>
+
+      <!-- Matches List Container -->
+      <div id="matches-list" class="space-y-3">
+        <div class="py-12 text-center text-xs text-slate-500">Cargando partidos...</div>
+      </div>
+    </main>
+
+    <footer></footer>
+
+    <script type="module" src="/src/js/pages/resultados.js"></script>
+  </body>
+</html>

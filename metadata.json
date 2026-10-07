@@ -1,0 +1,6 @@
+{
+  "name": "FUTBOL DE TODO EL MUNDO",
+  "description": "Plataforma oficial de FUTBOL DE TODO EL MUNDO: resultados en vivo, noticias exclusivas, fichajes y rumores de LaLiga, Premier League, Serie A, Bundesliga, Ligue 1 y Selecciones.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

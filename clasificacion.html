@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clasificación de Liga | FUTBOL DE TODO EL MUNDO</title>
+    <meta name="description" content="Tabla de clasificación oficial en FUTBOL DE TODO EL MUNDO con puntos, partidos, diferencia de goles y posiciones." />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="stylesheet" href="/src/index.css" />
+  </head>
+  <body class="bg-[#060911] text-slate-100 flex flex-col min-h-screen">
+    <header></header>
+
+    <main class="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full space-y-8">
+      <!-- Title & Competition Selector -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#1e2a45] pb-6">
+        <div>
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-neon/10 border border-neon/30 text-neon text-[11px] font-bold uppercase tracking-wider mb-1">
+            <span id="competition-badge-label">LaLiga EA Sports</span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl font-black text-white" id="standings-title">Clasificación de LaLiga</h1>
+        </div>
+
+        <!-- Legend -->
+        <div class="flex flex-wrap items-center gap-3 text-[11px]" id="standings-legend">
+          <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#00d2ff]"></span> Champions League (1-4)</span>
+          <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-orange-500"></span> Europa League (5-6)</span>
+          <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Conference (7)</span>
+          <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-500"></span> Descenso (18-20)</span>
+        </div>
+      </div>
+
+      <!-- Competition Selector Tabs -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="competition-tabs">
+        <button data-comp="LaLiga" class="comp-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-neon text-black flex items-center gap-2 shadow-lg shadow-neon/10 shrink-0">
+          <span>🇪🇸</span> <span>LaLiga</span>
+        </button>
+        <button data-comp="Premier League" class="comp-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-[#0c1220] border border-[#1e2a45] text-slate-300 hover:text-white shrink-0 flex items-center gap-2">
+          <span>🏴󠁧󠁢󠁥󠁮󠁧󠁿</span> <span>Premier League</span>
+        </button>
+        <button data-comp="Bundesliga" class="comp-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-[#0c1220] border border-[#1e2a45] text-slate-300 hover:text-white shrink-0 flex items-center gap-2">
+          <span>🇩🇪</span> <span>Bundesliga</span>
+        </button>
+        <button data-comp="Serie A" class="comp-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-[#0c1220] border border-[#1e2a45] text-slate-300 hover:text-white shrink-0 flex items-center gap-2">
+          <span>🇮🇹</span> <span>Serie A</span>
+        </button>
+        <button data-comp="Ligue 1" class="comp-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-[#0c1220] border border-[#1e2a45] text-slate-300 hover:text-white shrink-0 flex items-center gap-2">
+          <span>🇫🇷</span> <span>Ligue 1</span>
+        </button>
+        <button data-comp="Selecciones" class="comp-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-[#0c1220] border border-[#1e2a45] text-slate-300 hover:text-white shrink-0 flex items-center gap-2">
+          <span>🌍</span> <span>Selecciones</span>
+        </button>
+      </div>
+
+      <!-- Standings Table Container -->
+      <div class="fresh-card overflow-hidden border-neon/30">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="bg-[#0c1220] border-b border-[#1e2a45] text-slate-400 font-bold uppercase text-[11px]">
+                <th class="py-3 px-3 sm:px-4 text-center w-12">Pos</th>
+                <th class="py-3 px-3 sm:px-4">Club</th>
+                <th class="py-3 px-2 sm:px-3 text-center">PJ</th>
+                <th class="py-3 px-2 sm:px-3 text-center">PG</th>
+                <th class="py-3 px-2 sm:px-3 text-center">PE</th>
+                <th class="py-3 px-2 sm:px-3 text-center">PP</th>
+                <th class="py-3 px-2 sm:px-3 text-center hidden md:table-cell">GF</th>
+                <th class="py-3 px-2 sm:px-3 text-center hidden md:table-cell">GC</th>
+                <th class="py-3 px-2 sm:px-3 text-center">DG</th>
+                <th class="py-3 px-3 sm:px-4 text-right font-black text-neon">PTS</th>
+              </tr>
+            </thead>
+            <tbody id="standings-body" class="divide-y divide-[#131f38]">
+              <tr>
+                <td colspan="10" class="py-12 text-center text-xs text-slate-500">Cargando clasificación...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+
+    <script type="module" src="/src/js/pages/clasificacion.js"></script>
+  </body>
+</html>

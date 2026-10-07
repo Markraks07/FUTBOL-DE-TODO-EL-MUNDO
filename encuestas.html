@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encuestas | FUTBOL DE TODO EL MUNDO</title>
+    <meta name="description" content="Opina y vota en las encuestas oficiales sobre fútbol internacional en FUTBOL DE TODO EL MUNDO." />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="stylesheet" href="/src/index.css" />
+  </head>
+  <body class="bg-[#060911] text-slate-100 flex flex-col min-h-screen">
+    <header></header>
+
+    <main class="flex-1 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full space-y-8">
+      <div class="border-b border-[#1e2a45] pb-6">
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-neon/10 border border-neon/30 text-neon text-[11px] font-bold uppercase tracking-wider mb-1">
+          <span>Votaciones de Miembros</span>
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-black text-white">Encuestas Futbolísticas</h1>
+        <p class="text-xs sm:text-sm text-slate-400 mt-1">Participa con tu voto en los grandes debates del fútbol mundial.</p>
+      </div>
+
+      <!-- Polls List -->
+      <div id="polls-list" class="space-y-6">
+        <div class="py-12 text-center text-xs text-slate-500">Cargando encuestas...</div>
+      </div>
+    </main>
+
+    <footer></footer>
+
+    <script type="module" src="/src/js/pages/encuestas.js"></script>
+  </body>
+</html>

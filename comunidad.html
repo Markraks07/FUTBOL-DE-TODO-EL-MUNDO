@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIEMBROS | FUTBOL DE TODO EL MUNDO</title>
+    <meta name="description" content="Sección oficial de MIEMBROS de FUTBOL DE TODO EL MUNDO. Debates, opiniones, porras y comunidad futbolística internacional." />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="stylesheet" href="/src/index.css" />
+  </head>
+  <body class="bg-[#060911] text-slate-100 flex flex-col min-h-screen">
+    <header></header>
+
+    <main class="flex-1 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full space-y-8">
+      <!-- Title & CTA -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#1e2a45] pb-6">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neon/10 border border-neon/30 text-neon text-xs font-bold uppercase tracking-wider mb-2">
+            <span class="w-2 h-2 rounded-full bg-neon animate-pulse"></span>
+            <span>Comunidad Oficial</span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl font-black text-white">Zona de MIEMBROS</h1>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">Debates, análisis táctico y debates del fútbol mundial entre miembros registrados.</p>
+        </div>
+
+        <button id="open-new-debate-btn" class="btn-neon text-xs py-2.5 px-4 self-start sm:self-auto shadow-neon-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          <span>Abrir Nuevo Debate</span>
+        </button>
+      </div>
+
+      <!-- Guest Member Lock Banner (Visible when user is NOT logged in) -->
+      <div id="members-guest-banner" class="hidden fresh-card p-6 sm:p-8 border-neon/50 bg-gradient-to-r from-[#0a1128] via-[#0c1220] to-[#0a1128]">
+        <div class="flex flex-col sm:flex-row items-center gap-6">
+          <div class="w-14 h-14 rounded-2xl bg-[#0e172a] border border-neon/40 flex items-center justify-center text-neon shrink-0 shadow-neon-sm">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <div class="space-y-2 text-center sm:text-left flex-1">
+            <span class="text-[11px] font-extrabold uppercase tracking-widest text-neon">Contenido Exclusivo para Miembros</span>
+            <h3 class="text-lg font-bold text-white">¿Aún no eres Miembro de FUTBOL DE TODO EL MUNDO?</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Inicia sesión o regístrate para abrir debates, responder a otros miembros, participar en las porras oficiales y sumar puntos en el ranking de miembros.
+            </p>
+            <div class="pt-2 flex flex-wrap justify-center sm:justify-start gap-3">
+              <a href="/login.html" class="btn-neon text-xs py-2 px-5">Iniciar Sesión</a>
+              <a href="/login.html?tab=register" class="btn-secondary text-xs py-2 px-5">Registrarme como Miembro</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member Welcome Banner (Visible when user IS logged in) -->
+      <div id="members-auth-welcome" class="hidden fresh-card p-4 sm:p-5 border-neon/30 bg-[#0c1220]">
+        <div class="flex items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-[#152037] border border-[#1e2a45] flex items-center justify-center font-bold text-neon text-sm overflow-hidden" id="member-avatar-box">
+              M
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-sm font-bold text-white" id="member-nickname-text">Miembro</span>
+                <span class="px-2 py-0.5 rounded bg-neon/20 border border-neon/40 text-[10px] font-extrabold text-neon uppercase">Miembro Oficial</span>
+              </div>
+              <p class="text-xs text-slate-400">Bienvenido a la zona exclusiva de miembros de FUTBOL DE TODO EL MUNDO.</p>
+            </div>
+          </div>
+          <a href="/perfil.html" class="btn-secondary text-xs py-1.5 px-3 hidden sm:inline-flex">Mi Perfil</a>
+        </div>
+      </div>
+
+      <!-- New Debate Form (hidden by default) -->
+      <div id="new-debate-box" class="hidden fresh-card p-5 border-neon/50 space-y-4">
+        <h3 class="text-sm font-bold text-white flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-neon"></span>
+          <span>Iniciar un Nuevo Debate en la Zona de Miembros</span>
+        </h3>
+        <form id="new-debate-form" class="space-y-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Título del debate</label>
+            <input type="text" id="debate-title-input" required placeholder="Ej: ¿Quién es el favorito para ganar la Champions esta temporada?" class="fresh-input text-xs" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Tu argumento o análisis futbolístico</label>
+            <textarea id="debate-content-input" rows="4" required placeholder="Desarrolla tus argumentos futbolísticos para la comunidad..." class="fresh-input text-xs resize-none"></textarea>
+          </div>
+          <div class="flex justify-end gap-2">
+            <button type="button" id="cancel-debate-btn" class="btn-secondary text-xs">Cancelar</button>
+            <button type="submit" id="submit-debate-btn" class="btn-neon text-xs">Publicar Debate</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Debates Feed -->
+      <div id="debates-feed" class="space-y-4">
+        <div class="py-12 text-center text-xs text-slate-500">Cargando debates de miembros...</div>
+      </div>
+    </main>
+
+    <footer></footer>
+
+    <script type="module" src="/src/js/pages/comunidad.js"></script>
+  </body>
+</html>
